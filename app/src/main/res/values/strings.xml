@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BR-FB</string>
+<!--
+    <string name="hello_world">Hello world!</string>
+-->
+    <string name="action_settings">Settings</string>
+
+    <!-- Button text -->
+    <string name="btn_logout_from_google">G+ Logout</string>
+
+
+    <!--<string name="btn_logout_from_facebook">FB Logout</string>-->
+    <string name="btn_revoke_access">Revoke Access</string>
+    <string name="btn_create_pool">Create pool</string>
+    <string name="test"> Hello </string>
+
+    <!-- Facebook -->
+    <string name="get_started">To get started, log in using Facebook</string>
+    <string name="settings">Settings</string>
+    <string name="app_id">242873859241349</string>
+
+    <!-- Main2 -->
+    <string name="update_status"> Update status </string>
+    <string name="post_image"> Post image </string>
+    post_image
+</resources>
