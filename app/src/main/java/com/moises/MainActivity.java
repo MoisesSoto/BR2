@@ -28,6 +28,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity {
+
+
     private static final String TAG = "====>";
     private static final int SPLASH = 0;
     private static final int SELECTION = 1;
@@ -45,6 +47,7 @@ public class MainActivity extends FragmentActivity {
                 @Override
                 public void call(Session session,
                                  SessionState state, Exception exception) {
+                    Log.i(TAG, "*Session.StatusCallback*");
                     onSessionStateChange(session, state, exception);
                 }
             };
@@ -66,39 +69,6 @@ public class MainActivity extends FragmentActivity {
             transaction.hide(fragments[i]);
         }
         transaction.commit();
-    }
-    @Override
-    public void onResume() {
-        Log.i(TAG, "onResume-1");
-        super.onResume();
-        uiHelper.onResume();
-        isResumed = true;
-    }
-    @Override
-    public void onPause() {
-        Log.i(TAG, "onPause-1");
-        super.onPause();
-        uiHelper.onPause();
-        isResumed = false;
-    }
-    @Override
-    public void onDestroy() {
-        Log.i(TAG, "onDestroy-1");
-        super.onDestroy();
-        uiHelper.onDestroy();
-    }
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        Log.i(TAG, "onSaveInstanceState-1");
-        super.onSaveInstanceState(outState);
-        uiHelper.onSaveInstanceState(outState);
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i(TAG, "onActivityResult-1---> Rq-"+ requestCode + " Rp-" + resultCode);
-        super.onActivityResult(requestCode, resultCode, data);
-        uiHelper.onActivityResult(requestCode, resultCode, data);
-
     }
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
@@ -146,7 +116,6 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-
     private void showFragment(int fragmentIndex, boolean addToBackStack) {
         Log.i(TAG, "showFragment-1");
         FragmentManager fm = getSupportFragmentManager();
@@ -191,6 +160,39 @@ public class MainActivity extends FragmentActivity {
                 showFragment(SPLASH, false);
             }
         }
+    }
+    @Override
+    public void onResume() {
+        Log.i(TAG, "onResume-1");
+        super.onResume();
+        uiHelper.onResume();
+        isResumed = true;
+    }
+    @Override
+    public void onPause() {
+        Log.i(TAG, "onPause-1");
+        super.onPause();
+        uiHelper.onPause();
+        isResumed = false;
+    }
+    @Override
+    public void onDestroy() {
+        Log.i(TAG, "onDestroy-1");
+        super.onDestroy();
+        uiHelper.onDestroy();
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        Log.i(TAG, "onSaveInstanceState-1");
+        super.onSaveInstanceState(outState);
+        uiHelper.onSaveInstanceState(outState);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i(TAG, "onActivityResult-1---> Rq-"+ requestCode + " Rp-" + resultCode);
+        super.onActivityResult(requestCode, resultCode, data);
+        uiHelper.onActivityResult(requestCode, resultCode, data);
+
     }
 
     /*private LoginButton loginBtn;
